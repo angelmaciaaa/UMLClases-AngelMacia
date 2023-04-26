@@ -6,4 +6,18 @@ class Conference{}
 class BoardMeeting{}
 class Location{}
 class Person{}
+Event <|-- Conference
+Event <|-- BoardMeeting
+
+Person <|-- Member
+Member <|-- BoardMember
+
+class AAUOC{}
+AAUOC o-- Person
+AAUOC o-- Event
+AAUOC o-- Location
+Person -- Conference
+Location -- Event
+Event -- Member
+BoardMeeting -- BoardMember
 @enduml
