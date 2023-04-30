@@ -1,0 +1,23 @@
+@startuml
+class Member{}
+class BoardMember{}
+class Event{}
+class Conference{}
+class BoardMeeting{}
+class Location{}
+class Person{}
+Event <|-- Conference
+Event <|-- BoardMeeting
+
+Person <|-- Member
+Member <|-- BoardMember
+
+class AAUOC{}
+AAUOC o-- "0..*" Person
+AAUOC o-- "0..*" Event
+AAUOC o-- "0..*" Location
+Person "0..*" -- "0..*" Conference : attendsTo
+Location "1" -- "0..*" Event : isLocated In
+Event "0..*" -- "0..*" Member : attendsTo
+BoardMeeting "0..*" -- "0..*" BoardMember : attendsTo
+@enduml
